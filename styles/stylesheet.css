@@ -1,0 +1,120 @@
+:root {
+    --h-slider-rect: 41;
+    --w-slider-rect: 59;
+    --h-slider-rect-fr: calc(var(--h-slider-rect) * 1fr);
+    --w-slider-rect-fr: calc(var(--w-slider-rect) * 1fr);
+}
+
+body {
+    background-color: rgb(253, 249, 209);
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Content organization */
+
+.fv-w100-h100 {
+	font-family: Consolas,monaco,monospace; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.fh-w100-h25 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3 / 1;
+    width: 100%;
+}
+.box-mh100{
+    display: grid;
+    grid-template-rows: 59fr 41fr;
+    grid-template-columns: 41fr 59fr;
+    background-color: azure;
+    max-height: 100%;
+    height:100%;
+    aspect-ratio: 1;
+}
+
+/* Title */
+p {
+    font-size: xx-large;
+	font-family: Consolas,monaco,monospace; 
+}
+
+/* Color display */
+
+.box-color {
+    background-color: rgb(230, 230, 250);
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+/* Sliders */
+
+.hslidecontainer{
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.vslidecontainer{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    height: calc(100% * var(--h-slider-rect) / var(--w-slider-rect));
+    transform: rotate(-90deg);
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.dslidecontainer {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    transform: rotate(135.5deg);
+}
+
+.slider {
+    appearance: none;
+    background: rgba(226, 226, 226, 0.781);
+    height: 12px;
+    border-radius: 100px;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    background: black; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100px;
+}
+
+.vslider {
+    width: calc(100% * var(--w-slider-rect) / var(--h-slider-rect));
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.vslider::-webkit-slider-thumb {
+    background: green; /* Green background */
+  }
+
+.hslider {
+    width: 100%;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.hslider::-webkit-slider-thumb {
+    background: red; /* Green background */
+  }
+
+.dslider {
+    width: calc(100% * var(--w-slider-rect) / var(--h-slider-rect));
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.dslider::-webkit-slider-thumb {
+    background: blue; /* Green background */
+  }

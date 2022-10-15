@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>runningman</title>
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="icon" href="images\favicon.png">
+    <script src="scripts/initscript.js" ></script>
+    <script src="scripts/keyscript.js" defer></script>
+    <script src="scripts/sliderscript.js" defer></script>
+</head>
+<body>
+    <div class="fv-w100-h100">
+        <p>rgb(230,230,250)</p>
+        <div class="fh-w100-h25">
+            <div class="box-mh100">
+                <!-- Box to display rgb color -->
+                <div class="box-color"></div>
+                <!-- Sliders to select rgb color -->
+                <div class="slidecontainer hslidecontainer">
+                    <input type="range" min="0" max="255" value="230" class="slider hslider" id="redSlider">
+                </div>
+                <div class="fv-w100-h100 vsccontainer">
+                    <div class="slidecontainer vslidecontainer fv-w100-h100">
+                        <input type="range" min="0" max="255" value="230" class="slider vslider" id="greenSlider">
+                    </div>
+                </div>
+                <div class="slidecontainer dslidecontainer fv-w100-h100">
+                    <input type="range" min="0" max="255" value="250" class="slider dslider" id="blueSlider">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
