@@ -3,10 +3,12 @@
     --w-slider-rect: 59;
     --h-slider-rect-fr: calc(var(--h-slider-rect) * 1fr);
     --w-slider-rect-fr: calc(var(--w-slider-rect) * 1fr);
+    --background-color: rgb(253, 249, 209);
+    --content-size: calc(1/2);
 }
 
 body {
-    background-color: rgb(253, 249, 209);
+    background-color: var(--background-color);
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -29,6 +31,7 @@ body {
     justify-content: center;
     aspect-ratio: 3 / 1;
     width: 100%;
+    min-width: 33vh;
 }
 .box-mh100{
     display: grid;
@@ -38,6 +41,7 @@ body {
     max-height: 100%;
     height:100%;
     aspect-ratio: 1;
+    border-radius: 100%;
 }
 
 /* Title */
@@ -73,7 +77,7 @@ p {
 .dslidecontainer {
     grid-row-start: 2;
     grid-column-start: 1;
-    transform: rotate(135.5deg);
+    transform: rotate(136deg);
 }
 
 .slider {
@@ -90,10 +94,13 @@ p {
     background: black; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 100px;
+    box-sizing: border-box;
+    border: 1px solid white;
 }
 
 .vslider {
     width: calc(100% * var(--w-slider-rect) / var(--h-slider-rect));
+    background-image: linear-gradient(to right, rgb(230, 0, 250), rgb(230, 255, 250));
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -103,6 +110,7 @@ p {
 
 .hslider {
     width: 100%;
+    background-image: linear-gradient(to right, rgb(0, 230, 255), rgb(255, 230, 250));
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -112,6 +120,7 @@ p {
 
 .dslider {
     width: calc(100% * var(--w-slider-rect) / var(--h-slider-rect));
+    background-image: linear-gradient(to right, rgb(230, 230, 0), rgb(255, 230, 255));
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */

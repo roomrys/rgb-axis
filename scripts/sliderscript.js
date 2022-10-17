@@ -1,64 +1,27 @@
-{
-  redSlider.addEventListener(
+function updateTitleAndDisplay(display, title, color) {
+  display.style.backgroundColor = color;
+  title.textContent = color;
+}
+function updateSliderBackgrounds(slider) {
+  let sliderValues = [redSlider.value, greenSlider.value, blueSlider.value];
+  for (let i = 0; i < slider.all.length; i++) {
+    let sldr = slider.all[i];
+    let sldrStartValues = Array.from(sliderValues);
+    let sldrEndValues = Array.from(sliderValues);
+    sldrStartValues[i] = 0;
+    sldrEndValues[i] = 255;
+
+    // Update color of slider bar
+    sldr.style.backgroundImage = `linear-gradient(to right, rgb(${sldrStartValues}), rgb(${sldrEndValues}))`;
+  }
+}
+
+function listenToSliderInput(title, slider, display) {
+  document.addEventListener(
     "input",
-    (event) => {
-      console.log(event);
-
-      const title = document.getElementsByTagName("p")[0];
-      let redSlider = document.getElementById("redSlider");
-      let greenSlider = document.getElementById("greenSlider");
-      let blueSlider = document.getElementById("blueSlider");
-      const objectsToChange = document.getElementsByClassName("box-color");
-      objToChange = objectsToChange[0];
-
-      // Update color
-      let color = `rgb(${redSlider.value},${greenSlider.value},${blueSlider.value})`;
-      title.textContent = color;
-      objToChange.style.backgroundColor = color;
-      console.log(color);
-      console.log(event);
-    },
-    false
-  );
-  greenSlider.addEventListener(
-    "input",
-    (event) => {
-      console.log(event);
-
-      const title = document.getElementsByTagName("p")[0];
-      let redSlider = document.getElementById("redSlider");
-      let blueSlider = document.getElementById("blueSlider");
-      let greenSlider = document.getElementById("greenSlider");
-      const objectsToChange = document.getElementsByClassName("box-color");
-      objToChange = objectsToChange[0];
-
-      // Update color
-      let color = `rgb(${redSlider.value},${greenSlider.value},${blueSlider.value})`;
-      title.textContent = color;
-      objToChange.style.backgroundColor = color;
-      console.log(color);
-      console.log(event);
-    },
-    false
-  );
-  blueSlider.addEventListener(
-    "input",
-    (event) => {
-      console.log(event);
-
-      const title = document.getElementsByTagName("p")[0];
-      let redSlider = document.getElementById("redSlider");
-      let blueSlider = document.getElementById("blueSlider");
-      let greenSlider = document.getElementById("greenSlider");
-      const objectsToChange = document.getElementsByClassName("box-color");
-      objToChange = objectsToChange[0];
-
-      // Update color
-      let color = `rgb(${redSlider.value},${greenSlider.value},${blueSlider.value})`;
-      title.textContent = color;
-      objToChange.style.backgroundColor = color;
-      console.log(color);
-      console.log(event);
+    () => {
+      updateSliderBackgrounds(slider);
+      updateTitleAndDisplay(display, title, slider.color);
     },
     false
   );
