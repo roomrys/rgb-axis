@@ -30,9 +30,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 5 / 2;
+    aspect-ratio: 2 / 1;
     width: 100%;
-    min-width: 33vh;
+    max-width: 100vh;
 }
 .box-mh100{
     display: grid;
