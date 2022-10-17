@@ -5,6 +5,7 @@
     --w-slider-rect-fr: calc(var(--w-slider-rect) * 1fr);
     --background-color: rgb(253, 249, 209);
     --content-size: calc(1/2);
+    --slider-height: 25px;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 5 / 2;
     width: 100%;
     min-width: 33vh;
 }
@@ -83,14 +84,14 @@ p {
 .slider {
     appearance: none;
     background: rgba(226, 226, 226, 0.781);
-    height: 12px;
+    height: var(--slider-height);
     border-radius: 100px;
 }
 
 .slider::-webkit-slider-thumb {
     appearance: none;
-    width: 15px; /* Set a specific slider handle width */
-    height: 10px; /* Slider handle height */
+    width: calc(var(--slider-height) * 5/4); /* Set a specific slider handle width */
+    height: calc(var(--slider-height) - 2px); /* Slider handle height */
     background: black; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 100px;
